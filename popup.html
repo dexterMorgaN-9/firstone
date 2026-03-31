@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FirstOne</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css"/>
+</head>
+<body>
+  <div class="app">
+
+    <!-- Header -->
+    <div class="header">
+      <div class="logo">
+        <img src="doge-logo.png" class="logo-avatar" alt="avatar"/>
+        <span class="logo-text">FirstOne</span>
+      </div>
+    </div>
+
+    <!-- Coin display -->
+    <div class="coin-hero">
+      <div class="coin-circle">
+        <img src="doge-coin.png" class="coin-doge" alt="doge"/>
+        <span class="coin-number" id="coinCount">0</span>
+      </div>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="progress-section">
+      <div class="progress-label">
+        <span>next coin in</span>
+        <span id="nextCoinLabel">10 mins</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <!-- Stats row -->
+    <div class="stats-row">
+      <div class="stat-card">
+        <span class="stat-value" id="workMins">0</span>
+        <span class="stat-label">mins worked</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-card">
+        <span class="stat-value">20</span>
+        <span class="stat-label">coins = 10 min</span>
+      </div>
+    </div>
+
+    <!-- Reset note -->
+    <div class="reset-note">resets every midnight 🌙</div>
+
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
