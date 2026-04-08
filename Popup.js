@@ -1,15 +1,13 @@
-const EARN_EVERY = 10;
+const earn_every = 10;
 
 async function refresh() {
-  const state = await chrome.runtime.sendMessage({ action: "getState" });
-  if (!state) return;
+  const s = await chrome.runtime.sendMessage({ action: "getState" });
+  if (!s) return;
 
-  const { coins, workMins, nextCoinIn, progressPct } = state;
-
-  document.getElementById("coinCount").textContent        = coins;
-  document.getElementById("workMins").textContent         = workMins;
-  document.getElementById("progressFill").style.width     = `${progressPct}%`;
-  document.getElementById("nextCoinLabel").textContent    = nextCoinIn === 1 ? "1 min" : `${nextCoinIn} mins`;
+  document.getElementById("coinCount").textContent    = s.coins;
+  document.getElementById("workMins").textContent     = s.workmins;
+  document.getElementById("progressFill").style.width = `${s.progress}%`;
+  document.getElementById("nextCoinLabel").textContent = s.nextcoin === 1 ? "1 min" : `${s.nextcoin} mins`;
 }
 
-document.addEventListener("DOMContentLoaded", refresh);
+refresh();
